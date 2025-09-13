@@ -1,0 +1,154 @@
+.app-container {
+  min-height: 100vh;
+  background: #f7f9fc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #34495e;
+  margin-bottom: 16px;
+}
+
+.nav-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.nav-btn {
+  border: none;
+  background: #ecf0f1;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.nav-btn:hover {
+  background: #dfe6e9;
+}
+
+.nav-btn.active {
+  background: #3498db;
+  color: white;
+}
+
+.card {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  padding: 16px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+}
+
+.section-title {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: #2c3e50;
+}
+
+.destinations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.destination-btn {
+  flex: 1;
+  min-width: 120px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  color: white;
+  background: #3498db;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.destination-btn:hover {
+  transform: scale(1.05);
+  background: #2980b9;
+}
+
+.destination-btn.active {
+  background: #2ecc71;
+}
+
+.voice-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.voice-btn.start {
+  background: #f1c40f;
+}
+
+.voice-btn.stop {
+  background: #e74c3c;
+}
+
+.listening {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.audio-preview {
+  margin-top: 12px;
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 12px;
+  background: #27ae60;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.placeholder {
+  width: 100%;
+  height: 150px;
+  background: #ecf0f1;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #7f8c8d;
+  font-weight: 600;
+}
+
+.sensor-grid {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.sensor {
+  flex: 1;
+  background: #f9f9f9;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
