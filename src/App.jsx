@@ -10,7 +10,28 @@ export default function App() {
   const chunksRef = useRef([]);
   const destinations = ["Room 101", "Room 201", "Lab", "ICU", "Diagnostics"];
 
-  // Start or stop recording
+  // 👉 Send blob to webhook
+  const sendToWebhook = async (blob) => {
+    const formData = new FormData();
+    formData.append("file", blob, "voiceRecording.webm");
+
+    try {
+      const res = await fetch(
+        "https://amzman172.app.n8n.cloud/webhook-test/autowheel",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
+      console.log("✅ Audio sent to webhook!");
+    } catch (err) {
+      console.error("❌ Failed to send audio:", err);
+    }
+  };
+
+  // 🎤 Start or stop recording
   const handleVoiceToggle = async () => {
     if (!voiceActive) {
       try {
@@ -26,6 +47,9 @@ export default function App() {
           const blob = new Blob(chunksRef.current, { type: "audio/webm" });
           setAudioUrl(URL.createObjectURL(blob));
           console.log("Recorded Blob ready:", blob);
+
+          // 🚀 Send automatically to webhook
+          sendToWebhook(blob);
         };
 
         mediaRecorderRef.current.start();
